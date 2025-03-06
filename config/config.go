@@ -15,6 +15,17 @@ type ServerConfig struct {
 	Port int
 }
 
+type MysqlConfig struct {
+	Host      string `mapstructure:"host" json:"host" yaml:"host"`
+	Port      string `mapstructure:"port" json:"port" yaml:"port"`
+	DbName    string `mapstructure:"db-name" json:"db-name" yaml:"db-name"`
+	Username  string `mapstructure:"username" json:"username" yaml:"username"`
+	Password  string `mapstructure:"password" json:"password" yaml:"password"`
+	Charset   string `mapstructure:"charset" json:"charset" yaml:"charset"`
+	ParseTime string `mapstructure:"parse-time" json:"parse-time" yaml:"parse-time"`
+	Loc       string `mapstructure:"loc" json:"loc" yaml:"loc"`
+}
+
 var config *Config
 
 // InitSysConfig 读取配置文件，初始化config变量
