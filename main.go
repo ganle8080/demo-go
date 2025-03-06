@@ -7,7 +7,6 @@ import (
 
 func main() {
 	fmt.Println("Hello, World!")
-
 	config := config.InitSysConfig()
 	fmt.Printf("config: %v\n", config)
 }
