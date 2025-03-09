@@ -1,6 +1,10 @@
 package src
 
-import "github.com/gin-gonic/gin"
+import (
+	"demo-go/src/demo"
+
+	"github.com/gin-gonic/gin"
+)
 
 func LoadRouter(engine *gin.Engine) *gin.Engine {
 
@@ -11,6 +15,12 @@ func LoadRouter(engine *gin.Engine) *gin.Engine {
 			"message": "pong",
 		})
 	})
+
+	demoGroup := engine.Group("/demo")
+	{
+		demoGroup.GET("/helloworld", demo.HelloWorld)
+		demoGroup.GET("/ws", demo.HelloWorld)
+	}
 
 	return engine
 }
